@@ -23,8 +23,6 @@ describe('Counter', () => {
       componentProperties: { counter: 5 },
     });
 
-    expect(screen.getByText('Current Count: 5').textContent).toEqual(
-      'Current Count: 5'
-    );
+    expect(screen.getByText('Current Count: 5')).toBeInTheDocument();
   });
 });
