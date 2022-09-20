@@ -44,4 +44,12 @@ describe('Counter', () => {
 
     expect(screen.getByText('Current Count: 5')).toBeInTheDocument();
   });
+
+  test('should increment the counter on click', async () => {
+    await render(AppComponent, {
+      componentProperties: { counter: 5 },
+    });
+    fireEvent.click(screen.getByText('+'));
+    expect(screen.getByText('Current Count: 6')).toBeInTheDocument();
+  });
 });
